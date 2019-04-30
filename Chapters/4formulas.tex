@@ -1,0 +1,156 @@
+
+\chapter{Formulas}
+\section{Complexity = 3}
+
+We start from the case that complexity is $3$. 
+
+Let a symmetric critical arcgon $\mathcal{F_3}$ be given. Let the base circles of $\mathcal{F}_3$ be $O_c', O_o$ and $O_c$. Since we will calculate the ratio between paths and absolute distance, the exact size of each circle does not matter. Without loss of generality, suppose that the muddle base circle, $O_o$, is a unite circle. That is, $o = (0, 0)$ and the radius of $O_o$ is $1$. Figure~\ref{fig:f1_1}(a) shows how we denote points in $\mathcal{F}_3$. 
+
+\input{PST/f1_1.tex}
+
+Figure~\ref{fig:f1_1}(b) gives an illustration on arcs. Since $\mathcal{F}_3$ is symmetric, we know that 
+\[A' = A\text{, } B'= B\text{, }D' = D \text{, }\arc{a'n} = \arc{na}.\]
+Also, paths from $p$ to $q$ in $\mathcal{F}_3$ could be
+\[A'O_{up}A\text{, }A'D'DA\text{, } A'D'B\text{, }B'DA\text{, } B'B.\]
+Since $\mathcal{F}_3$ is critical, all paths listed above have the same length.
+Let $\|\overline{sm}| = |\overline{am}| = x$ and $|\overline{cm}| = k$. 
+\begin{theorem}
+$\rho_{\mathcal{F}_3}(p, q) =  \cfrac{x + \sqrt{k^2+x^2}\cdot\tan^{-1}{\frac{x}{k}}}{\left(\sqrt{1- x^2} - k\right)\cdot\cos{x} + \sqrt{k^2 + x^2}\cdot\cos{\left(\frac{x}{\sqrt{k^2 + x^2}} - x\right)}}.$
+\end{theorem}
+
+\begin{proof}
+
+[Goal 1: Find a solution of $x$.]
+
+
+Let $r$ be the radius of $O_c$ and $O_c'$. That is, $r = \sqrt{x^2+k^2}$.
+
+First, we can show that $\arc{na} = 2x$. Since $A'O_{up}A$ and 
+$A'D'DA$ are equal in length, we have
+\begin{align*}
+    |O_{up}| &= |D'D| \\
+    |\arc{a'n}|+|\arc{na}| &= |D'|+|D|.
+\end{align*}
+Also, since $|\arc{a'n}|=|\arc{na}|$ and $|D'|=|D|$, then
+\begin{align*}
+    2|\arc{na}| &= 2|D|, \\
+    |\arc{na}|&= |D| \\
+    &=|\overline{am}|+|\overline{ms}|\\
+    &=x+x\\
+    &=2x.
+\end{align*}
+
+Consider $\arc{aws}$. Since $|\overline{am}| = x$ and  $|\overline{oa}| = 1$, we know $\angle aom = \sin^{-1}{x}$.
+Thus,
+\begin{align*}
+    \arc{aws} &= 2 (1\cdot\angle aom)= 2\cdot \sin^{-1}{x}.
+\end{align*}
+Then, since $\arc{an}$ and $\arc{aws}$ construct a semicircle, we have
+\begin{align*}
+    |\arc{\overline{an}}+\arc{aws}| &= \pi \\
+    2x +2\sin^{-1}{x} &= \pi\\
+    x +\sin^{-1}{x} - \frac{\pi}{2} & = 0.\\
+\end{align*}
+Therefore,  $x$ is the solution of $x +\sin^{-1}{x} - \frac{\pi}{2}= 0$. The approximate value is $0.739085$.
+
+
+
+\vspace{1cm}
+[Goal 2: Calculate $P_{\mathcal{F}_3}(p, q)$.]
+\input{PST/f1_2.tex}
+According to Figure~\ref{fig:f1_2}, %??????f1-2
+$A'O_{up}A$ and $B'B$ are two path from $p$ to $q$. Then, we have
+\begin{align*}
+    2 P_{\mathcal{F}_3}(p, q) & = |A'O_{up}A|+|B'B|\\
+    P_{\mathcal{F}_3}(p, q) & = \frac{|A'O_{up}A|}{2}+\frac{|B'B|}{2}\\
+    &= |\arc{na}|+|A|+|B|\\
+    &=|\arc{na}|+|\arc{aqs}|.
+\end{align*}
+We have shown that $|\arc{na}| = 2x$. Also, we know that $|\arc{aqs}| = 2(r\cdot \angle acm)$, and $\angle acm = \tan^{-1}{\frac{x}{k}}$. Thus,
+\[|\arc{aqs}| = 2r\cdot \tan^{-1}{\frac{x}{k}}.\]
+Therefore, 
+\begin{align*}
+    P_{\mathcal{F}_3}(p, q) &=|\arc{na}|+|\arc{aqs}|\\
+    &=2x + 2r\cdot \tan^{-1}{\frac{x}{k}}.
+\end{align*}
+
+
+\vspace{1cm}
+[Goal 3: Calculate $D_{\mathcal{F}_3}(p, q)$.]
+\input{PST/f1_3.tex}
+Let $\overline{oc_x}$ and $\overline{cq_x}$ be the images of $\overline{oc}$ and $\overline{cq}$ in positive $x$ direction respectively. Then, we have
+\[\frac{D_{\mathcal{F}_3}(p, q)}{2} = |oc_x|+|cq_x|.\]
+
+Consider $|\overline{oc_x}|$. Since $|\overline{xs}| = x$, we have $\angle soc = \sin^{-1}{x}$. Then,
+\begin{align*}
+    \angle c_xoc &=\angle c_xos + \angle soc\\
+    &=-\frac{\pi}{2}+\sin^{-1}x.
+\end{align*}
+Since we have shown that $x+\sin^{-1}x-\frac{\pi}{2} = 0$, we know
+\[\angle c_xoc = -x.\]
+Then, since $|\overline{om}| = \sqrt{|\overline{oa}|^2-|\overline{am}|^2} = \sqrt{1-x^2}$, and we defined $|\overline{cm}| = k$, 
+\begin{align*}
+    |\overline{oc}| &= |\overline{om}|-|\overline{cm}|\\
+    &= \sqrt{1-x^2} - k.
+\end{align*}
+Therefore, 
+\begin{align*}
+    |\overline{oc_x}| &= |\overline{oc}|\cdot\angle c_xoc\\
+    &= (\sqrt{1-x^2} - k)\cdot \cos{(-x)}.
+\end{align*}
+
+Consider $|\overline{
+cq_x}|$. The angle from positive $x$ direction to $cq$ is
+\[\angle q_xcq = \angle q_xcm+\angle mca - \angle qca.\]
+
+
+\input{PST/f1_4.tex}%?????????
+
+
+We  have shown  that the angle from positive $x$ direction to $\overrightarrow{oc}$ is $-x$. Then, since $o, c$ and $m$ are co-linear, we say $\angle q_xcm = -x$ as well. Also, we know that $\angle mca = \tan^{-1}\frac{x}{k}$. 
+
+We will calculate $\angle qca$ by analyzing arc $A$. Since $\mathcal{F}_3$ is  critical and symmetric, we have
+\begin{align*}
+    |A'D'DA| &=|B'B|\\
+    |A|+|D| &= |B|\\
+    |A| &= |B|-|D|.
+\end{align*}
+Then, given $|A|+|B| = |\arc{aqs}| = 2r\cdot \tan^{-1}\frac{x}{k}$ and $|D|=2|\overline{aw}| = 2x$, we have
+\begin{align*}
+    |A| &= |B| - |D|\\
+    |A| &= |\arc{aqs}|-|A|  - |D|\\
+    2|A| &= |\arc{aqs}|- |D|\\
+    |A| &=\frac{|\arc{aqs}|- |D|}{2}\\
+    &=\frac{2r\cdot \tan^{-1}\frac{x}{k} - 2x}{2}\\
+    &=r\cdot \tan^{-1}\frac{x}{k} - x.
+\end{align*}
+Thus, $\angle qca = \frac{|A|}{r}$, and
+\begin{align*}
+    \angle q_xcq &= \angle q_xcm+\angle mca - \angle qca\\
+    &= -x +\tan^{-1}\frac{x}{k}-\frac{r\cdot \tan^{-1}\frac{x}{k} - x}{r}\\
+    &= -x +\tan^{-1}\frac{x}{k}-(\tan^{-1}\frac{x}{k} - \frac{x}{r})\\
+    &=-x+\frac{x}{r}.
+\end{align*}
+Therefore, 
+   \[|cq_x| = r\cdot \cos{(\angle q_xcq)}= r\cdot\cos{(-x+\frac{x}{r})}.\]
+Then, 
+\begin{align*}
+    \frac{D_{\mathcal{F}_3}(p, q)}{2} &= |oc_x|+|cq_x|\\
+    &=(\sqrt{1-x^2} - k)\cdot \cos{(-x)} +r\cdot \cos{(-x+\frac{x}{r})}.
+\end{align*}
+\vspace{1cm}
+Hence, 
+\begin{align*}
+    \rho_{\mathcal{F}_3}(p, q) &=  \frac{P_{\mathcal{F}_3}(p, q)}{D_{\mathcal{F}_3}(p, q)}\\
+    &=\frac{P_{\mathcal{F}_3}(p, q)/2}{D_{\mathcal{F}_3}(p, q)/2}\\
+     &=\frac{\frac{2x+2r\cdot\tan^{-1}\frac{x}{k}}{2}}{(\sqrt{1-x^2} - k)\cdot \cos{(-x)} +r\cdot \cos{(-x+\frac{x}{r})}}\\
+     &=\frac{x+r\cdot\tan^{-1}\frac{x}{k}}{(\sqrt{1-x^2} - k)\cdot \cos{(-x)} +r\cdot \cos{(-x+\frac{x}{r})}}\text{, as desired. }
+\end{align*}
+\end{proof}
+
+\section{In the General Case}
+	Consider the symmetric critical arcgons with $2n+1$ circles. Suppose the formula for $2(n-1)+1$ circles is given, the length for the shortest path should increment by $(\sqrt{r_N- x_N^2} - k_N)\cdot\cos(\tan^{-1}{\frac{x_j}{r_j}}-  \sin^{-1}{\frac{x_j}{k_j}}) $.
+
+	For any symmetric critical arcgons with $2n + 1$ circles, 
+	\[d(\vec{x}, \vec{k}) = \sum_{1\le i< n}\left(\sqrt{r_i- x_i^2} - k_i\right)\cdot\cos\left({x_1 +\sum_{1\le j< i} \tan^{-1}{\frac{x_j}{r_j}}-  \sin^{-1}{\frac{x_j}{k_j}}}\right) \]
+	\[p(\vec{x}, \vec{k}) = x_1 + \sum_{1\le i< n}r_i\cdot(\tan^{-1}{\frac{x_i}{k_i}}- \sin^{-1}{\frac{x_{i+1}}{r_i}}) + r_n\tan^{-1}{\frac{x_n}{k_n}}.\]

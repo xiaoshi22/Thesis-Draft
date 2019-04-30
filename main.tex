@@ -1,0 +1,102 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{subcaption}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{algorithmicx}
+ \usepackage{algorithm}
+\usepackage{algpseudocode}
+ \usepackage{minted}
+ \usepackage{pythonhighlight}
+ \usepackage{color}
+% \usepackage[dvipsnames]{xcolor}
+\usepackage[doi=false,
+    isbn=false,
+    url=false,
+    natbib=true,
+    hyperref = true,
+    backend=biber,backref=true]{biblatex}
+\addbibresource{ref.bib}
+\usepackage{hyperref}
+\usepackage{calc}
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+% \usepackage[space]{grffile} % For spaces in paths
+\usepackage{etoolbox} % For spaces in paths
+\makeatletter % For spaces in paths
+\patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+\makeatother
+
+
+%defines a few theorem-type environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+
+\makeatletter
+\DeclareFontFamily{U}{tipa}{}
+\DeclareFontShape{U}{tipa}{m}{n}{<->tipa10}{}
+\newcommand{\arc@char}{{\usefont{U}{tipa}{m}{n}\symbol{62}}}%
+
+\newcommand{\arc}[1]{\mathpalette\arc@arc{#1}}
+\newcommand{\fakeimage}{{\fboxsep=-\fboxrule\fbox{\rule{0pt}{3cm}\hspace{4cm}}}}
+
+\newcommand{\arc@arc}[2]{%
+  \sbox0{$\m@th#1#2$}%
+  \vbox{
+    \hbox{\resizebox{\wd0}{\height}{\arc@char}}
+    \nointerlineskip
+    \box0
+  }%
+}
+\makeatother
+
+
+\AtEveryBibitem{%
+  \clearfield{note}%
+}
+
+\title{The Stretch Factor of the Delaunay Triangulation}
+\author{Xiaoshi Wang}
+\date{\today}
+
+\begin{document}
+ 
+
+ 
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+ 
+\pagenumbering{roman} 
+\tableofcontents % Prints the main table of contents
+% \clearpage
+\listoffigures % Prints the list of figures
+\clearpage
+\pagenumbering{arabic} 
+
+
+
+\maketitle
+
+% \chapter*{Abstract}
+\include{Chapters/1introduction}
+\include{Chapters/2literature_review}
+\include{Chapters/3preliminaries}
+\include{Chapters/4formulas}
+\include{Chapters/5on_lower_bound}
+\include{Chapters/6on_upper_bound}
+\include{Chapters/7conlusion}
+\include{Chapters/8appendix}
+
+
+% \clearpage
+\printbibliography[heading=bibintoc, title={References}]
+
+
+
+\end{document}

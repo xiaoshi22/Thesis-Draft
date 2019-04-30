@@ -1,0 +1,38 @@
+
+\chapter{On the Lower Bound}
+We proceed by showing the existence of a symmetric critical arcgon with stretch factor $1.59324$. 
+The following is an algorithm to estimate the lower bound for the stretch factor of symmetric critical arcgon. 
+
+\begin{algorithm}
+\caption{Find the minmun value of function func}
+\label{check}
+\begin{algorithmic}[1]
+\Procedure{Check}{$n$}
+\State $func(\vec{x},\vec{k}) = d(\vec{x},\vec{k})/p(\vec{x},\vec{k})) $
+\For{every $x$, $\vec{x'}$ and every $\vec{k'}$ }
+\State temp = $func(\vec{x'}, \vec{k'})$
+\If{temp $>$ max}
+\State max = temp
+\State Return $max$
+\EndIf
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+
+Applying the algorithm on varied $n$ and the corresponding formula gives the worst cases. The table below gives the worst case of the stretch factors with $5, 7, 9, 11$  and $13$ circles respectively.
+\begin{table}[ht]
+\centering
+\begin{tabular}{l|l}
+the Number of Circles & the Worst Case \\ \hline
+5                     & 1.5932135      \\
+7                     & 1.5932263      \\
+9                     & 1.5932389      \\
+11                    & 1.5932412      \\
+13                    & 1.5932413     
+\end{tabular}
+\end{table}
+
+\vspace{1in}

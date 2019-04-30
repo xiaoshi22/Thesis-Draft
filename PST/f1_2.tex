@@ -1,0 +1,132 @@
+\begin{figure}[ht]
+
+\psset{unit=.7pt}
+\psset{labelsep=7pt}
+\begin{center} \small
+\begin{pspicture}(-140,-150)(140,150)
+    \psline{->}(-130,0)(130,0)
+    \psline{->}(0, -130)(0, 130)
+    \pscircle(0,0){100}
+     \uput[45](0, 0){$o$}
+     \psdot(0, 100)
+      \uput[135](0, 100){$n$}
+       \psdot(0, -100)
+     \uput[-135](0, -100){$s$}
+     \psdot(100, 0)
+      \uput[225](100, 0){$e$}
+      \psdot(-100, 0)
+     \uput[-45](-100, 0){$w$}
+     
+    \psarc[linecolor=lightgray, linewidth=2pt](0,0){100}{-90}{8}
+    % diagonal
+    \psdot(99.268, 13.917)
+    \uput[45](99.268, 13.917){$a$}
+    \psline(0, -100)(99.268, 13.917)
+    % center -> side circle
+    \psdot(31.154, -27.082)
+    \uput[90](31.154, -27.082){$c$}
+    \pscircle(31.154, -27.082){79.27}
+    \psarc[linecolor=lightgray, linewidth=2pt](31.154, -27.082){79.27}{31}{246.8}
+    
+    \psline[linestyle=dashed](0, 0)(99.268, 13.917)%oa
+    \psline[linestyle=dashed](31.154, -27.082)(99.268, 13.917)%ca
+    \psline[linestyle=dashed](0, 0)(31.154, -27.082)%oc
+    
+    
+     \psdot(49.343, -43.318)
+     \uput[-45](49.343, -43.318){$m$}
+     \psline[linestyle=dashed](31.154, -27.082)(49.343, -43.318)%cm
+     
+     \psdot(109.404, -14.408)
+      \uput[0](109.404, -14.408){$q$}
+    
+    
+    \psarc[linecolor=lightgray, linewidth=2pt](0,0){100}{172}{-90}
+    % diagonal
+    % \psdot(-99.268, 13.917)
+    % \uput[135](-99.268, 13.917){$a'$}
+    \psline(0, -100)(-99.268, 13.917)
+    % center -> side circle
+    % \psdot(-31.154, -27.082)
+    % \uput[90](-31.154, -27.082){$c'$}
+    \pscircle(-31.154, -27.082){79.27}
+    \psarc[linecolor=lightgray, linewidth=2pt](-31.154, -27.082){79.27}{-66.8}{149}
+    %  \psdot(-49.343, -43.318)
+    %  \uput[225](-49.343, -43.318){$m'$}
+    %  \psline[linestyle=dashed](-31.154, -27.082)(-49.343, -43.318)%cm
+     \psdot(-109.404, -14.408)
+      \uput[180](-109.404, -14.408){$p$}
+    
+    % \psline[linecolor=red, linestyle= dashed](-109.404, -14.408)(109.404, -14.408)
+    
+    \uput[-90](0,-120){(a)}
+\end{pspicture}
+\psset{unit=.7pt}
+\begin{pspicture}(-140,-150)(140,150)
+    \psline{->}(-130,0)(130,0)
+    \psline{->}(0, -130)(0, 130)
+    \pscircle(0,0){100}
+     \uput[45](0, 0){$o$}
+     \psdot(0, 100)
+      \uput[135](0, 100){$n$}
+       \psdot(0, -100)
+     \uput[-135](0, -100){$s$}
+     \psdot(100, 0)
+      \uput[225](100, 0){$e$}
+      \psdot(-100, 0)
+     \uput[-45](-100, 0){$w$}
+     
+    \psarc[linecolor=lightgray, linewidth=2pt](0,0){100}{-90}{8}
+    % diagonal
+    \psdot(99.268, 13.917)
+    \uput[45](99.268, 13.917){$a$}
+    
+    
+    \psline(0, -100)(99.268, 13.917)
+    % center -> side circle
+    \psdot(31.154, -27.082)
+    \uput[90](31.154, -27.082){$c$}
+    \pscircle(31.154, -27.082){79.27}
+    \psarc[linecolor=lightgray, linewidth=2pt](31.154, -27.082){79.27}{31}{246.8}
+    
+    \psline[linestyle=dashed](0, 0)(99.268, 13.917)%oa
+    \psline[linestyle=dashed](31.154, -27.082)(99.268, 13.917)%ca
+    \psline[linestyle=dashed](0, 0)(31.154, -27.082)%oc
+    
+    
+     \psdot(49.343, -43.318)
+     \uput[-45](49.343, -43.318){$m$}
+     \psline[linestyle=dashed](31.154, -27.082)(49.343, -43.318)%cm
+     
+     \psdot(109.404, -14.408)
+      \uput[0](109.404, -14.408){$q$}
+    
+    
+    % \psarc[linecolor=lightgray, linewidth=2pt](0,0){100}{172}{-90}
+    % diagonal
+    % \psdot(-99.268, 13.917)
+    % \uput[135](-99.268, 13.917){$a'$}
+    % \psline(0, -100)(-99.268, 13.917)
+    % center -> side circle
+    % \psdot(-31.154, -27.082)
+    % \uput[90](-31.154, -27.082){$c'$}
+    % \pscircle(-31.154, -27.082){79.27}
+    % \psarc[linecolor=lightgray, linewidth=2pt](-31.154, -27.082){79.27}{-66.8}{149}
+    %  \psdot(-49.343, -43.318)
+    %  \uput[225](-49.343, -43.318){$m'$}
+    %  \psline[linestyle=dashed](-31.154, -27.082)(-49.343, -43.318)%cm
+    %  \psdot(-109.404, -14.408)
+      \uput[180](-109.404, -14.408){$p$}
+    % 
+    % \psline[linecolor=red, linestyle= dashed](-109.404, -14.408)(109.404, -14.408)
+    
+    \uput[45](71, 71){$2x$}
+    \uput[-45](103, -103){$2r\cdot \tan^{-1}\frac{x}{k}$}
+    
+    \uput[-90](0,-120){(b)}
+\end{pspicture}
+
+\caption[Calculate the path distance from $p$ to $q$. ]{Calculate the path distance from $p$ to $q$.}\label{fig:f1_2}
+\end{center}
+\end{figure} 
+

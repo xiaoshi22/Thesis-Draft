@@ -1,0 +1,153 @@
+\chapter{On the Upper Bound}
+Consider a Let $\mathcal{O}$ be a chain of three distinct disks where $\mathcal{O} = (O_1, O_2, O_3)$. Define $D_\mathcal{O}(u,v)$ to be the shortest polyline from $u$ to $v$ 
+% that intersects line segments $a_1b_1, \dots , a_{n−1}b_{n−1}$ in that order
+and $P_\mathcal{O}(u,v)$ to be the shortest path from $u$ to $v$
+% that consists of arcs in {A1,...,An}∪ {B1, . . . , Bn} and line segments in {a1b1, . . . , an−1bn−1}.
+.
+Then, let $d(x, k) = \left|D_\mathcal{O}(u,v)\right|$ and $p(x, k) =| P_\mathcal{O}(u,v) |$ where $x$ is $\frac{|\overline{AB}|}{2}$ and $k$ is the distance from $O_3$ to the string $\overline{AB}$.
+Thus, we have
+\[d(x, k) = \left(\sqrt{1- x^2} - k\right)\cdot\cos{x} + \sqrt{k^2 + x^2}\cdot\cos{\left(\frac{x}{\sqrt{k^2 + x^2}} - x\right)},\]
+\[p(x, k) = \frac{\pi}{2} - \sin^{-1}{x} + \sqrt{k^2+x^2}\cdot\tan^{-1}{\frac{x}{k}}.\]
+
+Note that $x\in (0, 0.739)$, and $k\in (0, \sqrt{1-x^2})$ for a given $x$. 
+
+\begin{theorem}
+For all $0<x<0.739$ and $0<k<\sqrt{1-x^2}$, $\frac{p(x, k)}{d(x, k)} < 1.6$.
+\end{theorem}
+Let $x\in (0, 0.739)$ be given. Choose a $k$ such that $0< k < \sqrt{1-x^2}$. Let $r = \sqrt{k^2 + x^2}$.
+Define 
+\[f(x, k, \sigma) = p(x, k) - \sigma\cdot d(x, k).\] 
+
+[Goal: Show that $f(x, k, \sigma) < 0$ when $\sigma = 1.6$.]
+
+Calculating the partial derivatives for $f$ and replacing $\sqrt{k^2 + x^2}$ by $r$ give
+\begin{align*}
+    \frac{\partial f}{\partial x}  = &\frac{-1+x\cdot\sigma\cdot\cos{x}}{\sqrt{1-x^2}} 
++ \frac{k+ x\cdot\tan^{-1}{(\frac{x}{k})}+ x\cdot\sigma\cdot\cos{(x-\frac{x}{r})}}{r}\\
+&+ \frac{(-k^2+ r^3)\cdot\sigma\sin{(x-\frac{x}{r})}}{r^2}
++ (\sqrt{1-x^2}-k)\cdot \sigma\cdot\sin{x} ,
+\end{align*}
+and
+\begin{align*}
+    \frac{\partial f}{\partial k}  = & -\frac{x}{r} 
+    + \sigma\cdot\cos x
+    + \frac{k(r\cdot \tan^{-1}(\frac{x}{k})- r\cdot\sigma\cos(x-\frac{x}{r}) + x\sigma\cdot \sin^{-1}(x-\frac{x}{r}))}{r^2}.
+\end{align*}
+Note that $k, x < \sqrt{k^2 + x^2} = r$, and for all $\alpha\in \mathbb{R}$ $\cos\alpha, \sin\alpha < 1$ and $\tan^{-1}\alpha, \sin^{-1}\alpha <\frac{\pi}{2}$. 
+
+Then, for  $\frac{-1+x\cdot\sigma\cdot\cos{x}}{\sqrt{1-x^2}}$, if $x\le\sqrt{1-x^2}$, we have 
+\begin{align*} 
+\frac{-1+x\cdot\sigma\cdot\cos{x}}{\sqrt{1-x^2}}
+&  < \frac{x}{\sqrt{1-x^2}}\cdot\sigma\cdot\cos{x}\\
+& < \sigma
+\end{align*}
+If  $x>\sqrt{1-x^2}$, let $g(x) = x\cdot\cos x - \sqrt{1-x^2}.$ Then, $g'(x) = \frac{x}{\sqrt{1-x^2}} + \cos x - x\cdot \sin x$. Since $x > \sqrt{1 - x^2}$, $\frac{x}{\sqrt{1-x^2}}> 1$. Thus,
+\begin{align*} 
+g'(x) & >  \frac{x}{\sqrt{1-x^2}} - x\cdot \sin x\\
+& > 1-- x\cdot \sin x\\
+& > 0.
+\end{align*}
+Therefore, since $x < 1$, $g(x) < g(1) = \cos 1$.
+Then, 
+\begin{align*} 
+x\cdot\cos x - \sqrt{1-x^2} & < \cos 1\\
+x\cdot\cos x - \sqrt{1-x^2} & < \frac{1}{\sigma}\\
+\frac{-1+x\cdot\sigma\cdot\cos{x}}{\sqrt{1-x^2}}  & < \sigma.
+\end{align*}
+Therefore, 
+\begin{align} \label{part1}
+\frac{-1+x\cdot\sigma\cdot\cos{x}}{\sqrt{1-x^2}} &  < \sigma
+\end{align}
+\begin{align}\label{part2}
+\frac{k+ x\cdot\tan^{-1}{(\frac{x}{k})}+ x\cdot\sigma\cdot\cos{(x-\frac{x}{r})}}{r}
+&  = \frac{k}{r} + \frac{x}{r}\cdot\tan^{-1}{(\frac{x}{k})} + \frac{x}{r}\cdot\sigma\cdot\cos(x-\frac{x}{r})\nonumber\\
+& < 1 + \frac{\pi}{2} 
+\end{align}
+\begin{align}\label{part3}
+\frac{(-k^2+ r^3)\cdot\sigma\sin{(x-\frac{x}{r})}}{r^2} & < \frac{ r^3}{r^2}\cdot\sigma\sin{(x-\frac{x}{r})}\nonumber\\
+& < \sigma.
+\end{align}
+\begin{align}\label{part4}
+(\sqrt{1-x^2}-k)\cdot \sigma\cdot\sin{x} & < \sigma\cdot\sin{x}\nonumber\\
+& < \sigma.
+\end{align}
+By summing up the in-equation \ref{part1}, \ref{part2}, \ref{part3} and \ref{part4}, we have 
+\begin{align*}
+    \frac{\partial f}{\partial x}
+    & <  1+\frac{\pi}{2}+3\sigma < 8.
+\end{align*}
+For $\frac{\partial f}{\partial k}  $, we have 
+\begin{align*}
+    \frac{\partial f}{\partial k}  
+    & <  \sigma\cdot\cos x + \frac{k\cdot r\cdot \tan^{-1}(\frac{x}{k}) }{r^2} + \frac{k\cdot x\cdot\sigma\cdot \sin^{-1}(x-\frac{x}{r})}{r^2}\\
+    & =  \sigma\cdot\cos x + \frac{k\cdot r}{r^2}\cdot \tan^{-1}(\frac{x}{k})  + \frac{k\cdot x}{r^2}\cdot\sigma\cdot \sin^{-1}(x-\frac{x}{r})\\
+    & <  \sigma + \frac{\pi}{2} + \frac{\pi}{2}\sigma \\
+    & < 8.
+\end{align*}
+Now we can apply  the Piyavskii algorithm Bound($0, 0.739, 0, 1$) below for Lipschitz optimization to show that $f(x, k, \sigma)<0$ when $\sigma = 1.6$. Algorithm Bound(func, bound, lx, rx, lk, rk) will either return a value $func(x, k, \sigma) \ge 0$ in the given range $lx < x < rx$ and $lk < k < rk$, or give an upper bound on the value of $func$ that is less than 0. We apply $Bound(f, 8, 0, 0.739, 0, 1)$ in this case. Note that $f(x, k, \sigma) = -\infty$ if $k>\sqrt{1-x^2}, x = 0$ or $k = 0.$
+
+\begin{algorithm}
+\caption{Check the upper bound of function func}
+\label{array-sum}
+\begin{algorithmic}[1]
+\Procedure{Bound}{$func, bound, lx, rx, lk, rk$}
+\State $\sigma = 1.6$
+\State $max =\max \{func(lx, lk, \sigma), func(lx, \frac{lk + rk}{2}, \sigma), $
+
+\qquad$func(\frac{lx+rx}{2}, lk, \sigma), func(\frac{lx+rx}{2}, \frac{lk + rk}{2}, \sigma)\}$
+\If{$ max \ge 0$}
+\State Return $max$
+\EndIf
+    \State $apex = max + bound\cdot\frac{rx-lx}{2}+bound\cdot\frac{rk-lk}{2}$
+    \If{$ apex \ge 0$}
+\State $apex = \max\{Bound(func, lx, \frac{lk + rk}{2}, lk, \frac{lk + rk}{2}), $
+
+$Bound(func, lx, \frac{lk + rk}{2}, \frac{lk + rk}{2}, rk)\}, 
+Bound(func, \frac{lk + rk}{2}, rx, lk, \frac{lk + rk}{2})\},$
+
+$Bound(func, \frac{lk + rk}{2}, rx, \frac{lk + rk}{2}, rk, rk)\}$
+\EndIf
+	\State Return $apex$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+Therefore, we conclude that for all $0<x<0.739$ and $0<k<\sqrt{1-x^2}$,
+\begin{align*}
+  p(x, k) - \sigma\cdot d(x, k) & < 0\\
+  \frac{p(x, k)}{d(x, k)} & < \sigma \\ 
+  \frac{p(x, k)}{d(x, k)} & < 1.6.
+\end{align*}
+
+Also, for  $0<x<0.739$ and $-\sqrt{1-x^2}<k<0$,
+\[d(x, k) = \left(\sqrt{1- x^2} - k\right)\cdot\cos{x} + \sqrt{k^2 + x^2}\cdot\cos{\left(\frac{x}{\sqrt{k^2 + x^2}} - x\right)},\]
+\[p(x, k) = \frac{\pi}{2} - \sin^{-1}{x} + \sqrt{k^2+x^2}\cdot\tan^{-1}{\left(\pi+\frac{x}{k}\right )}.\]
+Then, let $x\in (0, 0.739)$ be given. Choose a $k$ such that $-\sqrt{1-x^2}< k <0$. Thus, 
+\begin{align*}
+  \frac{p(x, k)}{d(x, k)} & =  \frac{p(x', k)+\pi r-2 r\cdot\tan^{-1}\frac{x}{k}}{d(x', k)+2k\cos x} ,
+\end{align*}
+where $k' = k$ and $r = \sqrt{k^2+x^2}$.
+
+Let $m(x, k, \sigma) =r (\frac{\pi}{2}- \tan^{-1}\frac{x}{k}) - \sigma\cdot k\cos x$. Then, we have
+\begin{align*}
+    \frac{\partial m}{\partial x}  = &\frac{-k+\frac{\pi}{2}x-x\tan^{-1}\frac{x}{k}+\sigma\cdot k r\sin x}{r}\\
+    < & -1+\frac{\pi}{2}-\tan^{-1}\frac{x}{k}+\sigma\cdot k\sin x\\
+    < & \frac{\pi}{2} + \sigma\\
+    < & 4,
+\end{align*}
+and
+\begin{align*}
+   \frac{\partial m}{\partial k}  = &\frac{\frac{\pi}{2}k+x-k\tan^{-1}\frac{x}{k}-\sigma\cdot x r}{r}\\
+   < & \frac{\pi}{2}+1-\tan^{-1}\frac{x}{k}-\sigma\cdot x\\
+   < & 4.
+\end{align*}
+Then, applying the algorithm \textit{Bound} above with parameters $(m, 4, 0, 0.739, 0, 1)$ to show that $m(x, k, \sigma)<0$ when $\sigma = 1.6$. Therefore, we can conclude that 
+\[\frac{r (\frac{\pi}{2}- \tan^{-1}\frac{x}{k})}{k\cos x} < 1.6.\]
+
+Since $\frac{\pi r-2 r\cdot\tan^{-1}\frac{x}{k}}{2k\cos x} =  \frac{r (\frac{\pi}{2}- \tan^{-1}\frac{x}{k})}{k\cos x} < 1.6$, we know that $\frac{p(x, k)}{d(x, k)} <1.6$ for  $0<x<0.739$ and $-\sqrt{1-x^2}<k<0$. 
+
+
+Therefore, 
+\begin{align*}
+  \frac{p(x, k)}{d(x, k)} <1.6
+\end{align*}
+for  $0<x<0.739$ and $-\sqrt{1-x^2}<k<\sqrt{1-x^2}$. 
